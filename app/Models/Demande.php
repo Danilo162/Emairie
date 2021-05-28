@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class DemandeActeNaissance extends Model
+class Demande extends Model
 {
     use SoftDeletes;
 
@@ -14,7 +14,7 @@ class DemandeActeNaissance extends Model
      *
      * @var array
      */
-    protected $table="demande_acte_naissance";
+    protected $table="demande";
     protected $fillable = [];
     public $timestamps = false;
 

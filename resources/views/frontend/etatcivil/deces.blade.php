@@ -117,25 +117,6 @@ th.money, td.money{
     background-color: #006978;
 }
 
-
-.dalle-radio_Demarches {
-    background-color: #ddf0fa;
-    -moz-box-shadow: 0px 0px 0px 1px rgba(98,98,98,0.2),0px 0px 0px 0px rgba(255,255,255,0.9) inset,0px 2px 2px rgba(0,0,0,0.15);
-    -webkit-box-shadow: 0px 0px 0px 1px rgb(98 98 98 / 20%), 0px 0px 0px 0px rgb(255 255 255 / 90%) inset, 0px 2px 2px rgb(0 0 0 / 15%);
-    box-shadow: 0px 0px 0px 1px rgb(98 98 98 / 20%), 0px 0px 0px 0px rgb(255 255 255 / 90%) inset, 0px 2px 2px rgb(0 0 0 / 15%);
-    text-align: center;
-    border-radius: 6px;
-}
-.dalle {
-    float: left;
-    margin-left: 8px;
-    width: auto;
-    list-style: none;
-    border-radius: 6px;
-    margin-bottom: 8px;
-}
-
-
     </style>
 
 <div id="main" class="clearfix" style="margin-top:6px; border-top-left-radius:10px; border-top-right-radius:10px;">
@@ -145,63 +126,103 @@ th.money, td.money{
 
             <div class="profile-content">
 
-                <header class="panel-heading h4" style="padding-left: 0px;font-weight: bold;">DÉMARCHES ADMINISTRATIVES</header>
+                <header class="panel-heading h4" style="border-bottom: 1px solid #eee;margin-bottom: 20px;"> DEMANDE D'ACTE DE DÉCÈS</header> 
 
-                <section>
-                    <p>Bienvenue sur E-MAIRIE, plateforme numérique, destinée à effectuer vos démarches liées à la vie quotidienne, plus facilement et plus rapidement.</p>
+                @if(Session::has('warning'))
+                    <div class="alert alert-warning">
+                      {{Session::get('warning')}}
+                    </div>
+                @endif
 
-                    <p>Pour faire vos demandes, il suffit de remplir les formulaires en ligne, qui seront traités directement par les services concernés.</p>
+                @if(Session::has('success'))
+                    <div class="alert alert-success">
+                      {{Session::get('success')}}
+                    </div>
+                @endif
 
-                    <p>Par mail : infos@emairie.ci<br/>
-                        Par téléphone : 07 07 06 05 04 03
-                    </p>
-                </section>
-                <section class=" col-md-12">
-                    
-                    <div class="row col-md-12">
 
-                        <div id="div_demarche_naissance" class="dalle dalle-radio_Demarches col-md-4" style="display: flex;">
-                            <a href="{{route('etatcivil.naissance')}}">
-                                <label for="ac_demarche-1" class="label-radio" title="Naissance : demande d'acte" style="overflow-wrap: break-word;cursor: pointer;">
-                                    <span class="image-illustrative">
-                                        <img src="images/demande.png" alt="Demande d'acte de naissance">
-                                    </span>
-                                    Actes de naissance
-                                </label>
-                            </a>
+		        <form method="POST" id="form-demande-naissance" class="signup-form" enctype="multipart/form-data" action="{{route('etatcivil.SaveDemandeActeDeces')}}">
+
+		        {!! csrf_field() !!}
+
+		        <div class="col-md-12" style="padding: 0px;">
+
+	                <div class="col-md-6">
+	                
+						<div class="group card-name">
+	                        <label for="name">N° de l'acte de décès</label>
+	                        <input type="text" class="input" name="numero_acte_naissance" required>
+	                    </div>
+
+                        <div class="group card-name">
+                            <label for="name">Nom du titulaire</label>
+                            <input type="text" class="input" name="titulaire_nom" required>
                         </div>
                         
-                        <div id="div_demarche_mariage" onclick="show_page('etatcivil/mariage')" class="dalle dalle-radio_Demarches col-md-4" style="display: flex;">
-                            <a href="{{route('etatcivil.mariage')}}">
-                                <label for="ac_demarche-2" class="label-radio" title="Mariage : demande d'acte" style="overflow-wrap: break-word;cursor: pointer;">
-                                    <span class="image-illustrative">
-                                        <img src="images/demande.png" alt="Demande d'acte de mariage">
-                                    </span>
-                                    Actes de mariage 
-                                </label>
-                            </a>
-                        </div>
-                       
-                        <div id="div_demarche_deces" onclick="show_page('etatcivil/deces')" class="dalle dalle-radio_Demarches col-md-4" style="display: flex;">
-                            <a href="{{route('etatcivil.deces')}}">
-                                <label for="ac_demarche-3" class="label-radio" title="Décès : demande d'acte" style="overflow-wrap: break-word;cursor: pointer;">
-                                    <span class="image-illustrative">
-                                        <img src="images/demande.png" alt=" Demande d'acte de décès">
-                                    </span>
-                                    Actes de décès
-                                </label>
-                            </a>
+                        <div class="group card-name">
+                            <label for="name">Prénoms du titulaire</label>
+                            <input type="text" class="input" name="titulaire_prenoms" required>
                         </div>
 
-                        <div class="dalle dalle-vide dalle-vide_Demarches visible-desktop" style="display: flex;"></div>
-                        <div class="dalle dalle-vide dalle-vide_Demarches visible-desktop" style="display: flex;"></div>
-                        <div class="dalle dalle-vide dalle-vide_Demarches visible-tablet" style="display: flex;"></div>
-                        <div class="dalle dalle-vide dalle-vide_Demarches visible-tablet" style="display: flex;"></div>
+                        <div class="group card-name">
+                            <label for="name">Date du naissance</label>
+                            <input type="date" class="input" name="titulaire_date_naissance" required>
+                        </div>
+                        
 
-                    </div>
+                        <div class="group card-name">
+                            <label for="name">Lieu de naissance</label>
+                            <input type="text" class="input" name="titulaire_lieu_naissance" required>
+                        </div>
 
-                </section>
-                
+	                </div>
+			        
+	                <div class="col-md-6">
+	                
+                        <div class="group card-name">
+                            <label for="name">Date du décès</label>
+                            <input type="date" class="input" name="titulaire_date_naissance" required>
+                        </div>
+                        
+	                    <div class="group card-name">
+	                        <label for="name">Nombre de copies</label>
+	                        <input type="number" class="input" name="nombre_copies" value="1" required>
+	                    </div>
+
+	                    <div class="group card-name">
+	                        <label for="name">Qualité du demandeur</label>
+	                        <select name="qualite_demandeur" required>
+	                            <option value="">Choisir</option>
+	                            @foreach($qualites as $qualite)
+	                            <option value="{{$qualite->qualite_id}}">{{$qualite->qualite_libelle}}</option>
+	                            @endforeach
+	                        </select>
+	                    </div>
+
+	                    <div class="group card-name">
+	                        <label for="name">Motif de la demande</label>
+	                        <input type="text" class="input" name="motif" required>
+	                    </div>
+
+	                </div>
+
+                </div>
+
+				<div class="line line-lg pull-in"></div>
+				
+				<div class="col-md-12 ">
+				
+					<div class="actions pull-left"> 
+						<button type="reset" class="btn btn-info btn-sm">Annuler</button> 
+					</div>
+					<div class="actions pull-right"> 
+						<button type="submit" class="btn btn-success btn-sm">SOUMETTRE</button> 
+					</div>
+		        
+		        </div>
+
+		        </form>
+
 
             </div>
         </div>

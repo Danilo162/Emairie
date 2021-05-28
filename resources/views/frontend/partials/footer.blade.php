@@ -206,5 +206,22 @@
 </script>
 <script data-no-minify="1" async src="{{asset('frontend/js/lazyload.min.js')}}"></script>
 <script src=" {{asset('frontend/js/929147bfd4a409d8553fec280dd96604.js')}}" data-minify="1"></script>
+
+
+<!--script src="{{ asset('js/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/datatables/jquery.csv-0.71.min.js') }}"></script>
+<script src="{{ asset('js/kraksoft.js') }}"></script-->
+
+
+
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+
 </body>
 </html>

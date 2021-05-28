@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ asset('js/datatables/datatables.css') }}" type="text/css"/> 
+
 </head>
 
 <body>
@@ -72,10 +76,13 @@
                 </div>
             </div>
         </nav>
-
+        
         <main class="py-4">
             @yield('content')
         </main>
+        
     </div>
+    
+
 </body>
 </html>

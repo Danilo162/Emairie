@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `actualites` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table emairie.actualites : ~8 rows (environ)
+-- Listage des données de la table emairie.actualites : ~5 rows (environ)
 /*!40000 ALTER TABLE `actualites` DISABLE KEYS */;
 INSERT INTO `actualites` (`id`, `appel`, `resume`, `description`, `picture`, `type_actualite_id`, `mairie_id`, `source`, `source_link`, `number_views`, `created_at`, `updated_at`, `deleted_at`, `register_user_id`) VALUES
 	(1, 'La Centrafrique n’est jamais vraiment passée de la crise à la réconciliation 2', 'Lorsque M. Touadéra a commencé son premier mandat, il y a cinq ans, on aurait pu espérer un avenir meilleur pour la Centrafrique. Le pays s’était lentement, douloureusement éloigné d’une catastrophe humanitaire en 2013 et, deux ans après, semblait plus ou moins prêt pour des élections démocratiques. Les forces de maintien de la paix de l’ONU, en collaboration avec l’armée française, avaient apporté une certaine sécurité ; le gouvernement de transition avait accepté d’organiser le scrutin et de rendre le pouvoir au vainqueur ; la communauté internationale s’était chargée de la logistique électorale dans un pays déchiré par la guerre et en grande partie sans infrastructures.\r\n\r\nDes groupes armés tantôt rivaux, tantôt alliés\r\nMiraculeusement, les élections de 2015-2016 qui ont porté M. Touadéra au pouvoir ont été largement pacifiques et les observateurs internationaux se sont accordés pour dire qu’elles respectaient globalement la volonté de l’électorat. Quelques mois après le scrutin, lors d’une conférence internationale des donateurs à Bruxelles, la communauté internationale a levé 2 milliards d’euros pour aider à la reconstruction du pays. Quelques années plus tard, en 2019, le gouvernement et une douzaine de groupes armés ont signé à Khartoum un accord de paix sous les auspices de l’Union africaine (UA) et de la Communauté économique des Etats de l’Afrique centrale (CEEAC).', 'Lorsque M. Touadéra a commencé son premier mandat, il y a cinq ans, on aurait pu espérer un avenir meilleur pour la Centrafrique. Le pays s’était lentement, douloureusement éloigné d’une catastrophe humanitaire en 2013 et, deux ans après, semblait plus ou moins prêt pour des élections démocratiques. Les forces de maintien de la paix de l’ONU, en collaboration avec l’armée française, avaient apporté une certaine sécurité ; le gouvernement de transition avait accepté d’organiser le scrutin et de rendre le pouvoir au vainqueur ; la communauté internationale s’était chargée de la logistique électorale dans un pays déchiré par la guerre et en grande partie sans infrastructures.\r\n\r\nDes groupes armés tantôt rivaux, tantôt alliés\r\nMiraculeusement, les élections de 2015-2016 qui ont porté M. Touadéra au pouvoir ont été largement pacifiques et les observateurs internationaux se sont accordés pour dire qu’elles respectaient globalement la volonté de l’électorat. Quelques mois après le scrutin, lors d’une conférence internationale des donateurs à Bruxelles, la communauté internationale a levé 2 milliards d’euros pour aider à la reconstruction du pays. Quelques années plus tard, en 2019, le gouvernement et une douzaine de groupes armés ont signé à Khartoum un accord de paix sous les auspices de l’Union africaine (UA) et de la Communauté économique des Etats de l’Afrique centrale (CEEAC).', 'actualites/YoszFRQESw7rUSqlPwDPFV0GLEq3F6ekGoP5vM3z.jpg', 1, 1, 'Le monde', 'https://www.lemonde.fr/afrique/article/2021/01/11/la-centrafrique-n-est-jamais-vraiment-passee-de-la-crise-a-la-reconciliation_6065894_3212.html', NULL, '2021-01-12 08:01:03', '2021-01-12 08:17:23', NULL, 1),
@@ -112,7 +112,7 @@ INSERT INTO `agents` (`id`, `firstname`, `lastname`, `phone`, `email`, `picture`
 	(9, 'bdjbjdd', 'AGENT', '20020223', 'saas@gmail.com', 'agents/LMjClnUNylMiMvXNx4XwnQcZqnehN1lL1r2rv5Hr.jpg', 'DEV', 5, NULL, NULL, '2021-01-13 09:58:51', '2021-01-13 09:58:51', NULL),
 	(10, 'DEE', 'DDD²', '94949494', 'ss@gmail.com', 'agents/cLuHRq5faYRIuHt7Y50Egm8tdwqPEVbFaG6QHQot.jpg', 'jncdjcnkjdc', 5, NULL, NULL, '2021-01-13 10:00:29', '2021-01-13 10:00:29', NULL),
 	(11, 'DEE', 'DDD²', '94949414', 'sdds@gmail.com', 'agents/6zcY9sen7QzCDUSvLaHxJERE4g4t1WyUjq9ckm1d.jpg', 'jncdjcnkjdc', 5, NULL, NULL, '2021-01-13 10:01:49', '2021-01-13 10:01:49', NULL),
-	(12, 'DEE', 'DDD²', '92949414', 'sdd2s@gmail.com', 'agents/9btnUSYRUX1BGNfv3GjrgqvjHF1kLr4RT0XoX1Pn.jpg', 'jncdjcnkjdc', 5, NULL, NULL, '2021-01-13 10:02:44', '2021-01-13 10:02:44', NULL);
+	(12, 'DEE', 'DDD²', '92949414', 'sdd2s@gmail.com', 'agents/9btnUSYRUX1BGNfv3GjrgqvjHF1kLr4RT0XoX1Pn.jpg', 'jncdjcnkjdc', 5, NULL, 'agents/signature/ocb2jicZZ3YhL3AFn8GfZAs9SkCAEq47A2oNkliI.png', '2021-01-13 10:02:44', '2021-05-07 19:52:18', NULL);
 /*!40000 ALTER TABLE `agents` ENABLE KEYS */;
 
 -- Listage de la structure de la table emairie. commerces
@@ -168,9 +168,11 @@ INSERT INTO `communes` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) 
 	(4, 'Gombe', '2020-10-07 10:47:13', '2020-10-07 10:47:13', NULL);
 /*!40000 ALTER TABLE `communes` ENABLE KEYS */;
 
--- Listage de la structure de la table emairie. demande_acte_naissance
-CREATE TABLE IF NOT EXISTS `demande_acte_naissance` (
+-- Listage de la structure de la table emairie. demande
+CREATE TABLE IF NOT EXISTS `demande` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `service_id` int(11) NOT NULL DEFAULT '0',
   `user_nom` varchar(255) DEFAULT NULL,
   `user_prenoms` varchar(255) DEFAULT NULL,
   `user_date_naissance` date DEFAULT NULL,
@@ -187,19 +189,38 @@ CREATE TABLE IF NOT EXISTS `demande_acte_naissance` (
   `titulaire_lieu_naissance` varchar(255) DEFAULT NULL,
   `titulaire_nom_pere` varchar(255) DEFAULT NULL,
   `titulaire_nom_mere` varchar(255) DEFAULT NULL,
-  `numero_acte_naissance` varchar(25) DEFAULT NULL,
+  `nom_marie` varchar(255) DEFAULT NULL,
+  `prenoms_marie` varchar(255) DEFAULT NULL,
+  `nom_mariee` varchar(255) DEFAULT NULL,
+  `prenoms_mariee` varchar(255) DEFAULT NULL,
+  `numero_acte` varchar(25) DEFAULT NULL,
   `nombre_copies` int(11) DEFAULT NULL,
   `qualite_demandeur` int(11) DEFAULT NULL,
   `motif` varchar(255) DEFAULT NULL,
-  `statut` enum('BROUILLON','VALIDE','TRAITE') DEFAULT 'BROUILLON',
+  `deleted_at` datetime DEFAULT NULL,
+  `date_mariage` date DEFAULT NULL,
+  `date_deces` date DEFAULT NULL,
+  `date_creation` datetime DEFAULT NULL,
+  `statut` enum('EN ATTENTE','EN COURS','TRAITE') DEFAULT 'EN ATTENTE',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table emairie.demande_acte_naissance : ~0 rows (environ)
-/*!40000 ALTER TABLE `demande_acte_naissance` DISABLE KEYS */;
-INSERT INTO `demande_acte_naissance` (`id`, `user_nom`, `user_prenoms`, `user_date_naissance`, `user_lieu_naissance`, `user_pays_residence`, `user_commune`, `user_quartier`, `user_adresse_postale`, `user_email`, `user_telephone`, `titulaire_nom`, `titulaire_prenoms`, `titulaire_date_naissance`, `titulaire_lieu_naissance`, `titulaire_nom_pere`, `titulaire_nom_mere`, `numero_acte_naissance`, `nombre_copies`, `qualite_demandeur`, `motif`, `statut`) VALUES
-	(5, 'SEYDOU', 'KONE', NULL, NULL, NULL, NULL, NULL, NULL, 'krak225@gmail.com', '0101101111', 'SEYDOU', 'KONE', NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, 'BROUILLON');
-/*!40000 ALTER TABLE `demande_acte_naissance` ENABLE KEYS */;
+-- Listage des données de la table emairie.demande : ~11 rows (environ)
+/*!40000 ALTER TABLE `demande` DISABLE KEYS */;
+INSERT INTO `demande` (`id`, `user_id`, `service_id`, `user_nom`, `user_prenoms`, `user_date_naissance`, `user_lieu_naissance`, `user_pays_residence`, `user_commune`, `user_quartier`, `user_adresse_postale`, `user_email`, `user_telephone`, `titulaire_nom`, `titulaire_prenoms`, `titulaire_date_naissance`, `titulaire_lieu_naissance`, `titulaire_nom_pere`, `titulaire_nom_mere`, `nom_marie`, `prenoms_marie`, `nom_mariee`, `prenoms_mariee`, `numero_acte`, `nombre_copies`, `qualite_demandeur`, `motif`, `deleted_at`, `date_mariage`, `date_deces`, `date_creation`, `statut`) VALUES
+	(5, 0, 1, 'SEYDOU', 'KONE', '2021-05-27', NULL, NULL, NULL, NULL, NULL, 'krak225@gmail.com', '0101101111', 'SEYDOU', 'KONE', NULL, 'BOUAKE', 'KONE', 'MAMADOU', NULL, NULL, NULL, NULL, '29/02-08-1987', 1, 5, NULL, NULL, NULL, NULL, NULL, 'TRAITE'),
+	(7, 0, 1, 'SEYDOU', 'KONE', '2021-05-27', NULL, NULL, NULL, NULL, NULL, 'krak225@gmail.com', '0101101111', 'FOFANA', 'MARIAM', NULL, 'BINGERVILLE', 'FOFANA ', '', NULL, NULL, NULL, NULL, NULL, 1, 5, 'sd', NULL, NULL, NULL, NULL, 'EN COURS'),
+	(9, 0, 1, 'SEYDOU', 'KONE', '2021-05-27', NULL, NULL, NULL, NULL, NULL, 'krak225@gmail.com', '0101101111', 'KOUASSI', 'FRANCK', '2021-05-27', 'ABIDJAN', 'KOUASSI YAO', 'KOFFI AKISSI', NULL, NULL, NULL, NULL, '120/12/08/2015', 1, NULL, NULL, NULL, NULL, NULL, NULL, 'EN ATTENTE'),
+	(12, 28, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DOVOGUIE', 'FLORA NADINE', '2003-01-27', 'MARCORY', 'YAO LOUKOU ALBERT', 'SERY DORCAS KADJA', NULL, NULL, NULL, NULL, '01020/01/80', 1, 2, 'CARTE D\'IDENTITE NATIONALE', NULL, NULL, NULL, '2021-05-27 19:48:50', 'EN ATTENTE'),
+	(13, 28, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'KADJA', 'YAO LOUKOU ALBERT SERY', '2021-05-28', 'MARCORY', 'FLORA NADINE', 'DOVOGUIE', NULL, NULL, NULL, NULL, '01020/01/80', 1, 1, 'CARTE D\'IDENTITE NATIONALE', NULL, NULL, NULL, '2021-05-28 16:44:18', 'EN ATTENTE'),
+	(14, 28, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'RICHMOND', 'KOUASSI', '2021-05-28', 'MARCORY', 'KOUASSI', 'RICHMOND', NULL, NULL, NULL, NULL, '2901/20012', 1, 5, 'CARTE D\'IDENTITE NATIONALE', NULL, NULL, NULL, '2021-05-28 16:46:08', 'EN ATTENTE'),
+	(15, 28, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'RICHMOND', 'KOUASSI', '2021-05-21', 'MARCORY', 'YAO LOUKOU ALBERT SERY', 'KADJA', NULL, NULL, NULL, NULL, '01020/01/80', 1, 5, 'CARTE D\'IDENTITE NATIONALE', NULL, NULL, NULL, '2021-05-28 17:36:46', 'EN ATTENTE'),
+	(16, 28, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'RICHMOND', 'KOUASSI', '2021-05-29', 'MARCORY', 'KOUASSI', 'RICHMOND', NULL, NULL, NULL, NULL, '01020/01/80', 1, 2, 'CARTE D\'IDENTITE NATIONALE', NULL, NULL, NULL, '2021-05-28 17:38:42', 'EN ATTENTE'),
+	(17, 28, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DOVOGUIE', 'KOUASSI', '2021-05-06', 'MARCORY', NULL, NULL, NULL, NULL, NULL, NULL, '01020/01/80', 1, 5, 'CARTE D\'IDENTITE NATIONALE', NULL, NULL, NULL, '2021-05-28 18:04:46', 'EN ATTENTE'),
+	(18, 28, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'RICHMOND', 'KOUASSI', '2021-05-13', 'MARCORY', NULL, NULL, NULL, NULL, NULL, NULL, '01020/01/80', 1, 4, 'CARTE D\'IDENTITE NATIONALE', NULL, NULL, NULL, '2021-05-28 18:05:28', 'EN ATTENTE'),
+	(19, 28, 101, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sdsdsd', 'SDSDDSD', '0001-02-22', 'MARCORY', NULL, NULL, NULL, NULL, NULL, NULL, 'sdsd', 1, 2, 'CARTE D\'IDENTITE NATIONALE', NULL, NULL, NULL, '2021-05-28 18:10:39', 'EN ATTENTE'),
+	(20, 28, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'RICHMOND', 'KOUASSI', 'DOVOGUIE', 'FLORA', 'sdsdsd', 1, 5, 'CARTE D\'IDENTITE NATIONALE', NULL, '2021-05-21', NULL, '2021-05-28 18:21:37', 'EN ATTENTE');
+/*!40000 ALTER TABLE `demande` ENABLE KEYS */;
 
 -- Listage de la structure de la table emairie. demande_mairie_services
 CREATE TABLE IF NOT EXISTS `demande_mairie_services` (
@@ -230,7 +251,7 @@ INSERT INTO `demande_mairie_services` (`id`, `mairie_id`, `administred_id`, `ser
 	(7, 1, 1, 2, 'ATTENTE', 'ABC3245', 2, NULL, '2021-01-14 19:22:08', '2021-01-14 19:22:08', NULL, 21),
 	(8, 6, 1, 4, 'TRAITEE', 'ABC3245', 2, NULL, '2021-02-23 06:21:09', '2021-02-23 06:49:32', NULL, 1),
 	(9, 6, 1, 4, 'ATTENTE', 'ABC3245', 10, NULL, '2021-02-23 09:50:39', '2021-02-23 09:50:39', NULL, 26),
-	(10, 5, 1, 99, 'ATTENTE', 'ABC3245', 100, NULL, '2021-02-23 10:27:26', '2021-02-23 10:27:26', NULL, 26),
+	(10, 5, 1, 99, 'TRAITEE', 'ABC3245', 100, NULL, '2021-02-23 10:27:26', '2021-05-07 22:49:48', NULL, 26),
 	(11, 6, 1, 4, 'ATTENTE', 'ABC3245', 10, NULL, '2021-02-23 10:54:19', '2021-02-23 10:54:19', NULL, 26);
 /*!40000 ALTER TABLE `demande_mairie_services` ENABLE KEYS */;
 
@@ -243,9 +264,9 @@ CREATE TABLE IF NOT EXISTS `demande_mairie_service_histories` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `register_user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table emairie.demande_mairie_service_histories : ~6 rows (environ)
+-- Listage des données de la table emairie.demande_mairie_service_histories : ~7 rows (environ)
 /*!40000 ALTER TABLE `demande_mairie_service_histories` DISABLE KEYS */;
 INSERT INTO `demande_mairie_service_histories` (`id`, `demande_mairie_service_id`, `status`, `created_at`, `updated_at`, `register_user_id`) VALUES
 	(1, 6, 'EN TRAITEMENT', '2021-01-14 18:00:15', '2021-01-14 18:00:15', 21),
@@ -253,7 +274,9 @@ INSERT INTO `demande_mairie_service_histories` (`id`, `demande_mairie_service_id
 	(3, 6, 'EN TRAITEMENT', '2021-01-14 19:27:55', '2021-01-14 19:27:55', 21),
 	(4, 6, 'TRAITEE', '2021-01-14 19:29:00', '2021-01-14 19:29:00', 21),
 	(5, 8, 'EN TRAITEMENT', '2021-02-23 06:22:49', '2021-02-23 06:22:49', 1),
-	(6, 8, 'TRAITEE', '2021-02-23 06:49:32', '2021-02-23 06:49:32', 1);
+	(6, 8, 'TRAITEE', '2021-02-23 06:49:32', '2021-02-23 06:49:32', 1),
+	(7, 10, 'EN TRAITEMENT', '2021-05-07 19:56:26', '2021-05-07 19:56:26', 27),
+	(8, 10, 'TRAITEE', '2021-05-07 22:49:49', '2021-05-07 22:49:49', 27);
 /*!40000 ALTER TABLE `demande_mairie_service_histories` ENABLE KEYS */;
 
 -- Listage de la structure de la table emairie. events
@@ -676,7 +699,7 @@ CREATE TABLE IF NOT EXISTS `qualites` (
   PRIMARY KEY (`qualite_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table emairie.qualites : ~4 rows (environ)
+-- Listage des données de la table emairie.qualites : ~5 rows (environ)
 /*!40000 ALTER TABLE `qualites` DISABLE KEYS */;
 INSERT INTO `qualites` (`qualite_id`, `qualite_libelle`, `deleted_at`) VALUES
 	(1, 'Le titulaire', NULL),
@@ -782,9 +805,9 @@ CREATE TABLE IF NOT EXISTS `services` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table emairie.services : ~99 rows (environ)
+-- Listage des données de la table emairie.services : ~101 rows (environ)
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
 INSERT INTO `services` (`id`, `name`, `picture`, `fait_generateur`, `taux`, `periode_paiement`, `type`, `price`, `created_at`, `updated_at`, `deleted_at`) VALUES
 	(1, 'EXTRAIT DE NAISSANCE', NULL, NULL, NULL, NULL, 'MAIRIE', '500', '2021-01-11 18:20:46', '2021-01-11 18:20:46', NULL),
@@ -885,7 +908,9 @@ INSERT INTO `services` (`id`, `name`, `picture`, `fait_generateur`, `taux`, `per
 	(96, 'Taxe  sur la réalisation d’une œuvre publicitaire  œuvre publicitaire réalisée à l’étranger ', NULL, 'Demande d’autorisation ', '350', '', 'MINISTERE', '25', NULL, NULL, NULL),
 	(97, 'Taxe  sur la réalisation d’une œuvre publicitaire  marque décorative et inscription promotionnelle sur un objet et autres supports ', NULL, 'Demande d’autorisation ', '10% de la mise ', '', 'MINISTERE', '25', NULL, NULL, NULL),
 	(98, 'Taxe  sur la réalisation d’une œuvre publicitaire  jeu concours promotionnel et tombola ', NULL, 'Demande d’autorisation ', '10% de la mise ', '', 'MINISTERE', '25', NULL, NULL, NULL),
-	(99, 'Taxe  sur la réalisation d’une œuvre publicitaire  impression à caractère publicitaire sur un support quelconque (billet, titre de voyage, pagne et autres) ', NULL, 'Demande d’autorisation ', '10% de la mise ', '', 'MINISTERE', '25', NULL, NULL, NULL);
+	(99, 'Taxe  sur la réalisation d’une œuvre publicitaire  impression à caractère publicitaire sur un support quelconque (billet, titre de voyage, pagne et autres) ', NULL, 'Demande d’autorisation ', '10% de la mise ', '', 'MINISTERE', '25', NULL, NULL, NULL),
+	(100, 'ACTE DE MARIAGE', NULL, NULL, NULL, NULL, NULL, '250', NULL, NULL, NULL),
+	(101, 'ACTE DE DECES', NULL, NULL, NULL, NULL, NULL, '250', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 
 -- Listage de la structure de la table emairie. taxeforfait_commerce_selecteds
@@ -1073,6 +1098,19 @@ INSERT INTO `type_actualites` (`id`, `name`, `created_at`, `updated_at`, `delete
 	(3, 'PRESSE', '2021-01-11 18:11:01', '2021-01-11 18:11:01', NULL);
 /*!40000 ALTER TABLE `type_actualites` ENABLE KEYS */;
 
+-- Listage de la structure de la table emairie. type_demande
+CREATE TABLE IF NOT EXISTS `type_demande` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `libelle` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Listage des données de la table emairie.type_demande : ~0 rows (environ)
+/*!40000 ALTER TABLE `type_demande` DISABLE KEYS */;
+INSERT INTO `type_demande` (`id`, `libelle`) VALUES
+	(1, 'EXTRAIT');
+/*!40000 ALTER TABLE `type_demande` ENABLE KEYS */;
+
 -- Listage de la structure de la table emairie. type_organes
 CREATE TABLE IF NOT EXISTS `type_organes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1083,7 +1121,7 @@ CREATE TABLE IF NOT EXISTS `type_organes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table emairie.type_organes : ~2 rows (environ)
+-- Listage des données de la table emairie.type_organes : ~0 rows (environ)
 /*!40000 ALTER TABLE `type_organes` DISABLE KEYS */;
 INSERT INTO `type_organes` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
 	(1, 'Mairie', NULL, NULL, NULL),
@@ -1100,7 +1138,7 @@ CREATE TABLE IF NOT EXISTS `type_taxes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table emairie.type_taxes : ~3 rows (environ)
+-- Listage des données de la table emairie.type_taxes : ~0 rows (environ)
 /*!40000 ALTER TABLE `type_taxes` DISABLE KEYS */;
 INSERT INTO `type_taxes` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
 	(1, 'Impot', '2020-12-07 08:24:25', '2020-12-07 08:24:25', NULL),
@@ -1129,6 +1167,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `administred_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `agent_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -1140,18 +1179,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table emairie.users : ~7 rows (environ)
+-- Listage des données de la table emairie.users : ~8 rows (environ)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `name`, `email`, `phone`, `administred_id`, `agent_id`, `email_verified_at`, `role_id`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-	(1, 'Admin', 'mylogin@gmail.com', NULL, NULL, NULL, NULL, 1, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', '3S4jZqazMOIrG8fAoSw5RzRNC0ndXdRMBvOlCvnVOxUVOjaUH3xCG9aNd4Ca', '2020-09-23 15:25:47', '2020-09-29 18:46:41', NULL),
-	(21, 'Admin Fonctionnel Admin Fonctionnel', 'acocody@gmail.com', NULL, NULL, '1', NULL, 2, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', 'voIGXILlSkfOQOLuS8ZhEASAQLchdLX6TnC047U7zZ8VzRkM7LVeHuGqAuga', '2020-12-10 19:39:51', '2020-12-10 19:39:51', NULL),
-	(22, 'Admin Fonctionnel Admin Fonctionnel', 'ayopougon@gmail.com', NULL, NULL, '2', NULL, 2, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', 'Z475JY485NTXJKTOkmzpemdxFCZEgWxPPUruAnXmOy9vmIHJbxABS5fd1Jxs', '2020-12-10 19:43:53', '2020-12-10 19:43:53', NULL),
-	(23, 'Agent 1 Agent 1', 'a1@gmail.com', NULL, NULL, '3', NULL, 3, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', NULL, '2020-12-10 19:49:40', '2020-12-10 19:49:40', NULL),
-	(24, 'Agent Agent', 'a2@gmail.com', NULL, NULL, '4', NULL, 4, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', NULL, '2020-12-10 19:50:48', '2020-12-10 19:50:48', NULL),
-	(26, 'AYEKPA AYEKPA', 'ayekpad@gmail.com', NULL, '1', '', NULL, 5, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', 'Uj9wv60lKUF2bnCHfvGZOHwZG3VwZs4GTMAKCPJEAnGEbMUMJhOLDLcB1R3y', '2020-12-10 20:15:48', '2020-12-10 20:15:48', NULL),
-	(27, 'DDD² DDD²', 'sdd2s@gmail.com', '92949414', NULL, '12', NULL, 4, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', NULL, '2021-01-13 10:02:45', '2021-01-13 10:02:45', NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `phone`, `picture`, `administred_id`, `agent_id`, `email_verified_at`, `role_id`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+	(1, 'Admin', 'mylogin@gmail.com', NULL, NULL, NULL, NULL, NULL, 1, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', '3S4jZqazMOIrG8fAoSw5RzRNC0ndXdRMBvOlCvnVOxUVOjaUH3xCG9aNd4Ca', '2020-09-23 15:25:47', '2020-09-29 18:46:41', NULL),
+	(21, 'Admin Fonctionnel Admin Fonctionnel', 'acocody@gmail.com', NULL, NULL, NULL, '1', NULL, 2, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', 'voIGXILlSkfOQOLuS8ZhEASAQLchdLX6TnC047U7zZ8VzRkM7LVeHuGqAuga', '2020-12-10 19:39:51', '2020-12-10 19:39:51', NULL),
+	(22, 'Admin Fonctionnel Admin Fonctionnel', 'ayopougon@gmail.com', NULL, NULL, NULL, '2', NULL, 2, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', 'Z475JY485NTXJKTOkmzpemdxFCZEgWxPPUruAnXmOy9vmIHJbxABS5fd1Jxs', '2020-12-10 19:43:53', '2020-12-10 19:43:53', NULL),
+	(23, 'Agent 1 Agent 1', 'a1@gmail.com', NULL, NULL, NULL, '3', NULL, 3, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', NULL, '2020-12-10 19:49:40', '2020-12-10 19:49:40', NULL),
+	(24, 'Agent Agent', 'a2@gmail.com', NULL, NULL, NULL, '4', NULL, 4, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', NULL, '2020-12-10 19:50:48', '2020-12-10 19:50:48', NULL),
+	(26, 'AYEKPA AYEKPA', 'ayekpad@gmail.com', NULL, NULL, '1', '', NULL, 5, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', 'Uj9wv60lKUF2bnCHfvGZOHwZG3VwZs4GTMAKCPJEAnGEbMUMJhOLDLcB1R3y', '2020-12-10 20:15:48', '2020-12-10 20:15:48', NULL),
+	(27, 'ARMAND KOUASSI', 'armand@gmail.com', '92949414', NULL, NULL, '12', NULL, 4, '$2y$10$fZhXFwI.ut.FPElsY9Fk1eItums4OvPFpD.AqAqTD43x8ZPZQAmG2', NULL, '2021-01-13 10:02:45', '2021-01-13 10:02:45', NULL),
+	(28, 'KOUASSI RICHMOND', 'krak225@gmail.com', NULL, NULL, '1', NULL, NULL, 5, '$2y$10$GRoW2beg4zxU5nC/85w76OZmLM60xgGyvAprtt6sEfeQBt1m9G3Ru', NULL, '2021-05-27 17:56:51', '2021-05-27 17:56:51', NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Listage de la structure de la table emairie. user_permission
@@ -1163,7 +1203,7 @@ CREATE TABLE IF NOT EXISTS `user_permission` (
   PRIMARY KEY (`user_id`,`permission_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table emairie.user_permission : ~2 rows (environ)
+-- Listage des données de la table emairie.user_permission : ~0 rows (environ)
 /*!40000 ALTER TABLE `user_permission` DISABLE KEYS */;
 INSERT INTO `user_permission` (`user_id`, `permission_id`, `created_at`, `updated_at`) VALUES
 	(17, 5, NULL, NULL),
@@ -1182,7 +1222,7 @@ CREATE TABLE IF NOT EXISTS `virtual_accounts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table emairie.virtual_accounts : ~6 rows (environ)
+-- Listage des données de la table emairie.virtual_accounts : ~0 rows (environ)
 /*!40000 ALTER TABLE `virtual_accounts` DISABLE KEYS */;
 INSERT INTO `virtual_accounts` (`id`, `amount`, `administred_id`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
 	(1, 50000.00, 20, NULL, '2020-12-01 21:41:18', '2020-12-01 21:41:18', NULL),

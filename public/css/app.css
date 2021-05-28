@@ -10899,3 +10899,13 @@ a.text-dark:focus {
   }
 }
 
+.profile-usermenu ul li a {
+    color: #5b9bd1;
+    background-color: #f6f9fb;
+    border-left: 2px solid #5b9bd1;
+    margin-left: -2px;
+    padding: 5px;
+    width: 100%;
+    display: inline-block;
+
+  }

@@ -16,7 +16,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
+    <!--link rel="stylesheet" href="{{ asset('js/datatables/datatables.css') }}" type="text/css"/--> 
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" type="text/css"/> 
+
+    
     <link rel="stylesheet" href="{{asset('frontend/css/605fd6d743e672381fdb174b3c1cda56.css')}} " data-minify="1" />
+
     <script type='text/javascript'>
         function ctSetCookie(c_name, value, def_value) {
             document.cookie = c_name + '=' + escape(value) + '; path=/';
@@ -636,9 +643,9 @@
 <input type="hidden" id="device" value="{{montant_simbole()}}">
 <div id="page" class="hfeed site" style=""> <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
     <header id="masthead" class="site-header clearfix">
-        <div id="header-text-nav-container" class="clearfix" style="background-color:#ebebeb!important;">
+        <div id="header-text-nav-container" class="clearfix" style="background-color:transparent;">
             <div class="news-bar" style="border-bottom-left-radius:10px; border-bottom-right-radius:10px;">
-                <div class="inner-wrap clearfix">
+                <div class="inner-wrap clearfix" >
                     <div class="date-in-header"> {{date("d-m-Y H:i")}}</div>
                     <div class="breaking-news"> <strong class="breaking-news-latest"> FLASH NEWS : </strong>
                         <ul class="newsticker">
@@ -717,8 +724,7 @@
                     <p class="menu-toggle"  style="background-color:#219b9c;"></p>
 
                     <div class="menu-primary-container">
-                        <ul id="menu-primary" class="menu">
-
+                        <ul id="menu-primary" class="menu" style="margin:0px;">
                             <li id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-120 menu-item-category-33"><a href="">MA COMMUNE</a></li>
                             <li id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-120 menu-item-category-33"><a href="">INFOS UTILES</a></li>
                             <li id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-120 menu-item-category-33"><a href="">JE VEUX...</a></li>

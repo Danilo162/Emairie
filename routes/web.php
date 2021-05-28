@@ -50,11 +50,16 @@ Route::group([ 'namespace' => 'Frontend'],function () {
 
         Route::get('/', 'EtatCivilController@index')->name('etatcivil');
 
-        Route::get('/naissance', 'EtatCivilController@naissance')->name('etatcivil.naissance');
-
-        Route::post('/naissance', 'EtatCivilController@SaveNaissance')->name('etatcivil.SaveNaissance');
-
+        Route::get('/mesdemandes', 'EtatCivilController@mesdemandes')->name('etatcivil.mesdemandes');
         
+        Route::get('/naissance', 'EtatCivilController@naissance')->name('etatcivil.naissance');
+        Route::post('/naissance', 'EtatCivilController@SaveNaissance')->name('etatcivil.SaveDemandeActeNaissance');
+
+        Route::get('/mariage', 'EtatCivilController@mariage')->name('etatcivil.mariage');
+        Route::post('/mariage', 'EtatCivilController@SaveDemandeActeMariage')->name('etatcivil.SaveDemandeActeMariage');
+
+        Route::get('/deces', 'EtatCivilController@deces')->name('etatcivil.deces');
+        Route::post('/deces', 'EtatCivilController@SaveDemandeActeDeces')->name('etatcivil.SaveDemandeActeDeces');
 
     });
     

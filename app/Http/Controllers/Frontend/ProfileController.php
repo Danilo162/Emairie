@@ -42,10 +42,12 @@ public function demande(Request $request){
     }
     $datas = self::getMyService(auth()->user()->administred_id);
 
-$modes = DB::table("mode_paiements")->where("id","=",4)->get();
+    $modes = DB::table("mode_paiements")->where("id","=",4)->get();
     $mairies = Mairies::all();
     $services = Service::all();
+
     return view("frontend.profile.demande",compact('datas','services','mairies','modes'));
+
 }
 
 public function service(Request $request){
@@ -102,7 +104,9 @@ public static function getMairieId($id){
     $data = $query->first();
     return $data;
 }
+
 public static function getMyService($id){
+
     $query =
        DB::table("demande_mairie_services")
            ->leftJoin("services","demande_mairie_services.service_id","=","services.id")
@@ -114,7 +118,9 @@ public static function getMyService($id){
     if($id){
         $query->where("demande_mairie_services.administred_id","=",$id);
     }
+
     $data = $query->get();
+    
     return $data;
 }
 
