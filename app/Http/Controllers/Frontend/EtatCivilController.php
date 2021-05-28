@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Backend\MairieController;
 use App\Http\Controllers\Controller;
 
-
 use App\Models\ThemeMairie;
 use App\Models\Themes;
 use App\Models\Qualite;
