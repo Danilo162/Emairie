@@ -31,27 +31,30 @@ class EtatCivilController extends Controller
     
     public function mariage(){
 
+        $mairies = Mairies::get()->sortBy('nom');
         $qualites = Qualite::get()->sortBy('qualite_libelle');
 
-        return view("frontend.etatcivil.mariage", compact('qualites'));
+        return view("frontend.etatcivil.mariage", compact('mairies','qualites'));
 
     }
 
     
     public function deces(){
 
+        $mairies = Mairies::get()->sortBy('nom');
         $qualites = Qualite::get()->sortBy('qualite_libelle');
 
-        return view("frontend.etatcivil.deces", compact('qualites'));
+        return view("frontend.etatcivil.deces", compact('mairies','qualites'));
 
     }
 
     
     public function naissance(){
 
+        $mairies = Mairies::get()->sortBy('nom');
         $qualites = Qualite::get()->sortBy('qualite_libelle');
 
-        return view("frontend.etatcivil.naissance", compact('qualites'));
+        return view("frontend.etatcivil.naissance", compact('mairies','qualites'));
 
     }
 
@@ -63,6 +66,7 @@ class EtatCivilController extends Controller
         $dan = new Demande();
         $dan->user_id                   =   Auth::user()->id;
         $dan->service_id                =   1;
+        $dan->mairie_id                 =   $request->mairie_id;
         $dan->titulaire_nom				=	$request->titulaire_nom;
         $dan->titulaire_prenoms			=	$request->titulaire_prenoms;
         $dan->titulaire_date_naissance	=	$request->titulaire_date_naissance;
@@ -137,16 +141,7 @@ class EtatCivilController extends Controller
 
 
 
-    
-    public function mesdemandes(){
 
-        $mesdemandes = Demande::where(['user_id'=>Auth::user()->id])->get()->sortByDesc('id');
-
-        $data = $mesdemandes;
-
-        return view("frontend.etatcivil.mesdemandes", compact('mesdemandes'));
-
-    }
 
     
 

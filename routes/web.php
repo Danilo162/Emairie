@@ -50,16 +50,18 @@ Route::group([ 'namespace' => 'Frontend'],function () {
 
         Route::get('/', 'EtatCivilController@index')->name('etatcivil');
 
-        Route::get('/mesdemandes', 'EtatCivilController@mesdemandes')->name('etatcivil.mesdemandes');
-        
-        Route::get('/naissance', 'EtatCivilController@naissance')->name('etatcivil.naissance');
-        Route::post('/naissance', 'EtatCivilController@SaveNaissance')->name('etatcivil.SaveDemandeActeNaissance');
+        Route::group([ 'middleware' => 'auth'],function () {
 
-        Route::get('/mariage', 'EtatCivilController@mariage')->name('etatcivil.mariage');
-        Route::post('/mariage', 'EtatCivilController@SaveDemandeActeMariage')->name('etatcivil.SaveDemandeActeMariage');
+            Route::get('/naissance', 'EtatCivilController@naissance')->name('etatcivil.naissance');
+            Route::post('/naissance', 'EtatCivilController@SaveDemandeActeNaissance')->name('etatcivil.SaveDemandeActeNaissance');
 
-        Route::get('/deces', 'EtatCivilController@deces')->name('etatcivil.deces');
-        Route::post('/deces', 'EtatCivilController@SaveDemandeActeDeces')->name('etatcivil.SaveDemandeActeDeces');
+            Route::get('/mariage', 'EtatCivilController@mariage')->name('etatcivil.mariage');
+            Route::post('/mariage', 'EtatCivilController@SaveDemandeActeMariage')->name('etatcivil.SaveDemandeActeMariage');
+
+            Route::get('/deces', 'EtatCivilController@deces')->name('etatcivil.deces');
+            Route::post('/deces', 'EtatCivilController@SaveDemandeActeDeces')->name('etatcivil.SaveDemandeActeDeces');
+
+        });
 
     });
     
@@ -99,6 +101,11 @@ Route::group([ 'namespace' => 'Frontend'],function () {
         Route::get('/print_extrait', 'ProfileController@print_file')->name('profile.extrait');
         Route::get('/commerce', 'ProfileController@commerce')->name('profile.commerce');
         Route::post('/store', 'ProfileController@demande_store')->name('profile.store');
+
+
+	    Route::get('/mesdemandes', 'ProfileController@mesdemandes')->name('etatcivil.mesdemandes');
+	    Route::get('/demande/{demande_id}', 'ProfileController@detail_demande')->name('etatcivil.demande.detail');
+	    
     });
 
 });

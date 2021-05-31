@@ -10,10 +10,12 @@ use App\Models\Administred;
 use App\Models\DemandeMairieService;
 use App\Models\Mairies;
 use App\Models\Service;
+use App\Models\Demande;
 use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Lang;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -213,5 +215,34 @@ $extrait =
             return back();
         }
     }
+
+
+
+    
+    public function mesdemandes(){
+
+        $mesdemandes = Demande::join('mairies','mairies.id','demande.mairie_id')
+                                ->join('services','services.id','demande.service_id')
+                                ->where(['user_id'=>Auth::user()->id])
+                                ->get()
+                                ->sortByDesc('demande.id');
+
+        return view("frontend.profile.mesdemandes", compact('mesdemandes'));
+
+    }
+
+    
+    public function detail_demande($demande_id){
+
+        $demande = Demande::join('mairies','mairies.id','demande.mairie_id')
+                                ->join('services','services.id','demande.service_id')
+                                ->where(['user_id'=>Auth::user()->id, 'demande_id'=>$demande_id])
+                                ->first();
+
+
+        return view("frontend.profile.demande-detail", compact('demande'));
+
+    }
+
 
 }

@@ -3,29 +3,24 @@
     <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     <script defer src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        #main{
-            background: transparent;
-            padding-top: 0px;
-            margin-top: 0px;
-        }
-        td,th{
-            font-size: 11px;
-        }
+<link rel="stylesheet" href="{{asset('select2/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/perso.css')}}">
 
-        .table-striped > tbody > tr:nth-of-type(odd) {
-            background-color: #f9f9f9;
-        }
-        .table-hover > tbody > tr:hover {
-            background-color: #f5f5f5;
-        }
-    </style>
+<ul class="breadcrumb no-border no-radius b-b b-light pull-in" style="padding: 5px 0px;margin:0px;margin-top:6px;"> 
+    <li><a href="{{route('etatcivil')}}"><i class="fa fa-home"></i> Accueil</a></li>
+    <li class="active">Commerces</li> 
+</ul> 
 
-<div id="main" class="clearfix" style="margin-top:6px; border-top-left-radius:10px; border-top-right-radius:10px;">
-    <div class="row profile">
+<div id="main" class="clearfix" style=" border-top-left-radius:10px; border-top-right-radius:10px;">
+    <div class="row profile" style="padding-top: 0px;">
+
         @include('frontend.profile.menu')
         <div class="col-md-9">
+
             <div class="profile-content">
+
+                <!--header class="panel-heading h4" style="border-bottom: 1px solid #eee;margin-bottom: 20px;"> DÉTAILS D'UNE DEMANDE</header--> 
+
             <div style="background: url({{ $data->picture?asset('storage/'.$data->picture):asset('images/baa.jpg')}}) no-repeat;
                 height: 300px;background-size: cover"></div>
                 <h4>{{$data->raison_social}}</h4>
