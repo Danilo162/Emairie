@@ -95,6 +95,10 @@ Route::group([ 'namespace' => 'Frontend'],function () {
     });
 
     Route::group([ 'prefix' => 'profile', 'middleware' => 'auth'],function () {
+
+        Route::get('/login', 'ProfileController@login')->name('profile.login');
+        Route::post('/register', 'ProfileController@register')->name('profile.register');
+
         Route::get('/', 'ProfileController@detail')->name('profile');
         Route::get('/demande', 'ProfileController@demande')->name('profile.demande');
         Route::get('/detail', 'ProfileController@detail')->name('profile.detail');

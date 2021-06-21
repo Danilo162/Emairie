@@ -87,13 +87,13 @@
         <div class="profile-usermenu">
             <ul class="nav">
                 <li class="active">
-                    <a href="{{route('profile.detail')}}">
+                    <a href="{{route('profile.login')}}">
                         <i class="fa fa-user"></i>
                        Se connecter
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('profile.commerce')}}">
+                    <a href="{{route('profile.register')}}">
                         <i class="fa fa-envelope"></i>
                         Créer un compte
                     </a>
